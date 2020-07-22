@@ -10,6 +10,7 @@ body, html {
 body {
   background-color: #36413E;
   margin: 0;
+  color: white;
 }
 
 .hero-img {
@@ -31,6 +32,7 @@ body {
 }
 
 ul {
+  padding-top: 2em;
   list-style-type: none;
   margin: 0;
   overflow: hidden;
@@ -53,8 +55,10 @@ li a {
   text-decoration: none;
 }
 
+
 a:hover {
   background-color: #8D8D92;
+  filter: blur(-8px);
 }
 
 button {
@@ -68,6 +72,12 @@ button {
   margin-top: 3em;
   height: 4em;
   width: 20em;
+  font-size: large;
+}
+
+button:hover {
+  background-color: #8d8d92;
+  color: #36413E;
 }
 
 img {
@@ -77,6 +87,7 @@ img {
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
+  filter: blur(.1em);
 }
 
 img:hover {
@@ -145,4 +156,15 @@ figure {
   grid-column-end: 9;
   grid-row-start: 5;
   grid-row-end: 9;
+}
+
+footer {
+  text-align: center;
+  padding: 2em;
+}
+
+.bottom-bar {
+  margin: auto;
+  display: inline-block;
+  width: 5em;
 }
