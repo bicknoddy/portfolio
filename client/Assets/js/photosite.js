@@ -89,35 +89,44 @@ landscapes[22] = new Image();
 landscapes[22].src = "Assets/pics/landscapes/nate.jpg"
 
 
-var portraitSlots = new Array();
-var landscapeSlots = new Array();
+var tallSlots = new Array();
+var wideSlots = new Array();
 
-portraitSlots = document.getElementsByClassName("portrait");
-landscapeSlots = document.getElementsByClassName("landscape");
+tallSlots = document.getElementsByClassName("portrait");
+wideSlots = document.getElementsByClassName("landscape");
 
 window.onload = function() {
   document.getElementById("button").addEventListener("click", generatePics);
   generatePics();
 }
 
+function getRandomNumber(max)
+{
+  return  rand = Math.floor(Math.random() * Math.floor(max));
+}
+
 function generatePics()
 { 
-  for(let i = 0; i < portraitSlots.length; i++)
+  for(let i = 0; i < tallSlots.length; i++)
   {
-    var rand = Math.floor((Math.random() * 20) + 1);
+    var rand = getRandomNumber(19);
+    console.log("This is the random index for the portraits" + rand);
 
-    portraitSlots[i].src = portraits[rand].src;
-    portraitSlots[i].parentElement.href = portraits[rand].src;
-
+    tallSlots[i].src = portraits[rand].src;
+    tallSlots[i].parentElement.href = portraits[rand].src;
   }
 
-  for(let i = 0; i < landscapeSlots.length; i++)
+  for(let i = 0; i < wideSlots.length; i++)
   {
-    var rand = Math.floor((Math.random() * 23) + 1);
+    var rand = getRandomNumber(22);
+    console.log("This is the random index for the landscapes" + rand);
 
-    landscapeSlots[i].src = landscapes[rand].src;
-    landscapeSlots[i].parentElement.href = landscapes[rand].src;
-
+    wideSlots[i].src = landscapes[rand].src;
+    wideSlots[i].parentElement.href = landscapes[rand].src;
   }
+}
+
+function checkForDupes()
+{
   
 }

@@ -58,7 +58,6 @@ li a {
 
 a:hover {
   background-color: #8D8D92;
-  filter: blur(-8px);
 }
 
 button {
@@ -87,7 +86,7 @@ img {
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
-  filter: blur(.1em);
+  filter: blur(.05em);
 }
 
 img:hover {
