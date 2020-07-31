@@ -102,31 +102,52 @@ window.onload = function() {
 
 function getRandomNumber(max)
 {
-  return  rand = Math.floor(Math.random() * Math.floor(max));
+  return rand = Math.floor(Math.random() * Math.floor(max));
 }
 
 function generatePics()
+{
+  generateLandscapes();
+  generatePortraits();
+  checkForDupes(tallSlots);
+  checkForDupes(wideSlots);
+}
+
+function generatePortraits()
 { 
   for(let i = 0; i < tallSlots.length; i++)
   {
     var rand = getRandomNumber(19);
-    console.log("This is the random index for the portraits" + rand);
 
     tallSlots[i].src = portraits[rand].src;
     tallSlots[i].parentElement.href = portraits[rand].src;
   }
+}
 
+function generateLandscapes()
+{ 
   for(let i = 0; i < wideSlots.length; i++)
   {
     var rand = getRandomNumber(22);
-    console.log("This is the random index for the landscapes" + rand);
 
     wideSlots[i].src = landscapes[rand].src;
     wideSlots[i].parentElement.href = landscapes[rand].src;
   }
 }
 
-function checkForDupes()
+function checkForDupes(arr)
 {
-  
+  for(let i = 0; i < arr.length; i++)
+  {
+    for(let j = 0; j < arr.length; j++)
+    {
+      if(i !== j)
+      {
+        if(arr[i].src === arr[j].src)
+        {
+          generatePics();
+        }
+      }
+    }
+  }
 }
