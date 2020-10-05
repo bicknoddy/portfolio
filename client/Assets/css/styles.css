@@ -2,97 +2,81 @@
   box-sizing: border-box;
   font-family: "Montserrat",sans-serif;
   margin: 0;
+}
+
+body {
   background-color: #40555e;
 }
 
-#main {
+.main {
   background-image: url("../pics/landscapes/rado2_tiny.jpg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#nav {
+  display: inline;
 }
 
 .nav-item {
+  font-size: x-large;
   cursor: pointer;
   outline: none;
+  transition: color .4s;
+}
+
+.nav-item:hover {
+  color: lightcoral;
+  background-color: black;
 }
 
 #top-bar {
-  height: 6vh;
-  background-color: #1f2224;
+  height: 50px;
+  background-color: black;
+  padding-top: .5em;
+}
+
+.top-right-nav {
+  float: right;
+  padding-right: 1.1em;
 }
 
 span a {
   font-size: 1.2em;
   color: #b1b4ba;
-
-}
-
-ul {
-  padding-top: 2em;
-  list-style-type: none;
-  margin: 0;
-  overflow: hidden;
-  text-align: center;
-}
-
-li {
-  display: inline-block;
-  padding: .5%;
-}
-
-li a {
-  display: block;
-  color: white;
-  background-color: #36413E;
-  border: 1px solid #8D8D92;
-  border-radius: 10%;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
 }
 
-
-a:hover {
-  background-color: #8D8D92;
-}
-
-button {
-  margin: auto;
-  text-align: center;
-  display: block;
-  color: white;
-  background-color: #36413E;
-  border: 3px solid #8D8D92;
+#box {
+  width: 30%;
+  height: 60%;
+  background-color: black;
   border-radius: 5%;
-  margin-top: 3em;
-  height: 4em;
-  width: 20em;
-  font-size: large;
-}
-
-button:hover {
-  background-color: #8d8d92;
-  color: #36413E;
-}
-
-#submit {
-  height: 2em;
-  width: 6em;
-  margin-top: 1em;
-}
-
-#photoSelection {
+  margin: auto;
+  flex-direction: column;
   padding-top: 2em;
   text-align: center;
-  margin: auto;
 }
 
-#addPhoto {
-  padding-top: 1.25em;
-  padding-left: 5em;
+#box p {
+  color: #b1b4ba;
+  font-size: medium;
+  padding: .5em;
+}
+
+.stack {
+  columns: 2;
+  column-fill: balance;
+}
+
+#button {
+  padding-left: 25em;
 }
 
 img {
@@ -171,15 +155,4 @@ figure {
   grid-column-end: 9;
   grid-row-start: 5;
   grid-row-end: 9;
-}
-
-footer {
-  text-align: center;
-  padding: 2em;
-}
-
-.bottom-bar {
-  margin: auto;
-  display: inline-block;
-  width: 5em;
 }
